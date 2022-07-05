@@ -1,9 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ACDCBoostCourse",
-    "\\ACDCBoostCourse\\ACDCBoostCourse"
+    "\\ACDCAssignments",
+    "\\ACDCAssignments\\ACDCAssignments",
+    "\\ACDCAssignments\\ACDCAssignments\\Week 1",
+    "\\ACDCAssignments\\ACDCAssignments\\Week 2",
+    "\\ACDCBoostCourse\\ACDCBoostCourse",
+    "\\ACDCBoostCourse\\ACDCBoostCourse\\Week 1"
   ],
-  "SelectedNode": "\\ACDCBoostCourse\\ACDCBoostCourse.sln",
+  "SelectedNode": "\\ACDCAssignments\\ACDCAssignments\\Week 1",
   "PreviewInSolutionExplorer": false
 }

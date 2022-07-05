@@ -1,2 +1,2 @@
 ﻿  ACDCBoostCourse.cpp
-  ACDCBoostCourse.vcxproj -> C:\Users\user\Desktop\ACDCBoostCourse\acdc_jisu\ACDCBoostCourse\Debug\ACDCBoostCourse.exe
+c1xx : fatal error C1083: 소스 파일을 열 수 없습니다. 'ACDCBoostCourse.cpp': No such file or directory
