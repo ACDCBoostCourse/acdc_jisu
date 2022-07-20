@@ -1,38 +1,28 @@
 ﻿#include <iostream>
+#include <string.h>
 #include <string>
 using namespace std;
 
 int main() {
 	// 0~9 -> 48~57
-	string input;
+	char input[1000001]; //0 ~ 1,000,000 자리 입력
 	cin >> input;
 
 	int count = 0;
 
-	while (1) {
-		int length = input.length();
+	while (strlen(input) > 1) {
 		int sum = 0;
-		int num_input = stoi(input);
-
-		if (num_input < 10) {
-			if (num_input % 3 == 0) {
-				cout << count << endl << "YES";
-				break;
-			}
-			else {
-				cout << count << endl << "NO";
-				break;
-			}
+		for (int i = 0; i < strlen(input); i++) { // 각 자리 합 구하기
+			sum = sum + input[i] - 48;
 		}
-		else {
-			for (int i = 0; i < length; i++) { // 각 자리 합 구하기
-				int number = input[i] - 48;
-				sum = sum + number;
-			}
-			count++;
-			input = to_string(sum);
-			continue;
-		}
+		count++;
+		sprintf(input, "%d", sum); //int를 char 배열로 변환?
 	}
-	return 0;
+	
+	if (stoi(input) % 3 == 0) {
+		cout << count << endl << "YES";
+	}
+	else {
+		cout << count << endl << "NO";
+	}
 }
