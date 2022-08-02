@@ -19,7 +19,7 @@ int main() {
 		SumFirst = SumFirst + FirstTeam[i];
 		if (SumFirst > SumSecond) {
 			cout << "Yes";
-			return 0;;
+			return 0;
 		}
 		SumSecond = SumSecond + SecondTeam[i];
 	}
