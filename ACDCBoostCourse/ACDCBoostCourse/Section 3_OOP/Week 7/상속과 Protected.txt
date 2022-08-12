@@ -1,0 +1,19 @@
+3. 상속과 Protected
+
+기본 개념
+private : 외부에서 접근 불가능
+protected : 외부에서 접근이 불가능하나 파생 클래스에서는 접근 가능
+public : 어디에서나 접근 가능
+
+상속을 쓰는 이유 : 클래스 내의 속성, 행동들을 물려받아 쓰면 따로 정의, 선언할 필요x
+	-> 코드의 양↓, 프로그램의 유연성↑ 등등 Good
+
+상속에서
+1. private 상속 시 : private 제한자보다 접근 범위가 넓은 멤버는 모두 private 제한자로 바뀌어 상속됨.
+	-> private보다 접근 범위가 넓은(public, protected) 멤버들은 모두 private으로 바뀌어 넘어옴.
+2. protected 상속 시 : protected 제한자보다 접근 범위가 넓은 멤버는 모두 protected 제한자로 바뀌어 상속됨.
+	-> private, protected 멤버는 그대로 있고, public 멤버는 protected로 바뀌어 상속됨.
+3. public 상속 시 : public 제한자보다 접근 범위가 넓은 멤버는 모두 public 제한자로 바뀌어 상속됨.
+	-> public보다 접근 범위가 넓은 것이 없으므로 부엇하나 바뀌지 않고 그대로 상속됨.
+
+
