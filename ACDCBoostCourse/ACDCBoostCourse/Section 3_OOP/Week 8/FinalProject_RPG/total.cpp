@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <cstdlib>
 #include <ctime>
 
@@ -11,17 +11,17 @@ public:
 		this->performance = performance;
 	}
 
-	Item operator+(Item& item) const { // Á¶ÇÕ ¼º°øÇßÀ» ¶§ 
+	Item operator+(Item& item) const { // ì¡°í•© ì„±ê³µí–ˆì„ ë•Œ 
 		int newPerformance = item.GetPerformance() + GetPerformance();
 
-		return Item("Á¶ÇÕ ¼º°ø ¾ÆÀÌÅÛ", newPerformance);
+		return Item("ì¡°í•© ì„±ê³µ ì•„ì´í…œ", newPerformance);
 	}
 
 	int GetPerformance() const { return performance; }
 
 private:
-	string itemName; // ¾ÆÀÌÅÛ ÀÌ¸§
-	int performance; // ¼º´É
+	string itemName; // ì•„ì´í…œ ì´ë¦„
+	int performance; // ì„±ëŠ¥
 };
 
 class User {
@@ -36,19 +36,19 @@ public:
 		this->luck = luck;
 	}
 
-	// virtual void attck() {} // °ø°Ý
+	// virtual void attck() {} // ê³µê²©
 
-	void defend() { // ¹æ¾î
-		cout << GetName() << " : ¹æ¾î" << endl;
+	void defend() { // ë°©ì–´
+		cout << GetName() << " : ë°©ì–´" << endl;
 	}
 
-	Item combinate(Item a, Item b) { // ¾ÆÀÌÅÛ Á¶ÇÕ
+	Item combinate(Item a, Item b) { // ì•„ì´í…œ ì¡°í•©
 		int realLuck;
 		srand((unsigned int)time(NULL));
 
 		if (isBurning) {
 			realLuck = 60 + luck;
-			cout << "¹ö´× ÀÌº¥Æ® Àû¿ë" << endl;
+			cout << "ë²„ë‹ ì´ë²¤íŠ¸ ì ìš©" << endl;
 		}
 		else {
 			realLuck = 50 + luck;
@@ -57,61 +57,61 @@ public:
 		if (realLuck > 100) realLuck = 100;
 
 		if (rand() % 100 + 1 <= realLuck) {
-			cout << "Á¶ÇÕ ¼º°ø!" << endl;
+			cout << "ì¡°í•© ì„±ê³µ!" << endl;
 			return a + b;
 		}
 		else {
-			cout << "Á¶ÇÕ ½ÇÆÐ!" << endl;
-			return Item("Á¶ÇÕ ½ÇÆÐ ¾ÆÀÌÅÛ", 0);
+			cout << "ì¡°í•© ì‹¤íŒ¨!" << endl;
+			return Item("ì¡°í•© ì‹¤íŒ¨ ì•„ì´í…œ", 0);
 		}
 	}
 
 	string GetName() const { return name; }
 
 private:
-	static bool isBurning; // ¹ö´×ÀÌº¥Æ®À¯¹«
-	string name; // ÀÌ¸§
-	int level; // ·¹º§
-	int money; // ¼ÒÁö±Ý
-	int luck; // ¿î(0~50)
+	static bool isBurning; // ë²„ë‹ì´ë²¤íŠ¸ìœ ë¬´
+	string name; // ì´ë¦„
+	int level; // ë ˆë²¨
+	int money; // ì†Œì§€ê¸ˆ
+	int luck; // ìš´(0~50)
 
 };
 
 bool User::isBurning = false;
 
-class Warrior : public User { // Àü»ç
+class Warrior : public User { // ì „ì‚¬
 public:
 	Warrior(string name, int level, int money, int luck)
 		: User(name, level, money, luck) {}
 
-	void attack() { // °ø°Ý
-		cout << GetName() << " : °Ë ÈÖµÎ¸£±â" << endl;
+	void attack() { // ê³µê²©
+		cout << GetName() << " : ê²€ íœ˜ë‘ë¥´ê¸°" << endl;
 	}
 
 private:
 
 };
 
-class Magician : public User { // ¸¶¹ý»ç
+class Magician : public User { // ë§ˆë²•ì‚¬
 public:
 	Magician(string name, int level, int money, int luck)
 		: User(name, level, money, luck) {}
 
-	void attack() { // °ø°Ý
-		cout << GetName() << " : ¸¶¹ý ½î±â" << endl;
+	void attack() { // ê³µê²©
+		cout << GetName() << " : ë§ˆë²• ì˜ê¸°" << endl;
 	}
 
 private:
 
 };
 
-class Archer : public User { // ±Ã¼ö
+class Archer : public User { // ê¶ìˆ˜
 public:
 	Archer(string name, int level, int money, int luck)
 		: User(name, level, money, luck) {}
 
-	void attack() { // °ø°Ý
-		cout << GetName() << " : È° ½î±â" << endl;
+	void attack() { // ê³µê²©
+		cout << GetName() << " : í™œ ì˜ê¸°" << endl;
 	}
 
 private:
@@ -131,7 +131,7 @@ public:
 
 	void closeBurningEvent() {
 		User::isBurning = false;
-		cout << "¹ö´× ÀÌº¥Æ® Á¾·á" << endl;
+		cout << "ë²„ë‹ ì´ë²¤íŠ¸ ì¢…ë£Œ" << endl;
 	}
 
 private:
@@ -140,20 +140,20 @@ private:
 
 int main() {
 
-	Warrior Warrior("Àü»ç", 20, 1000, 0);
-	Magician Magician("¸¶¹ý»ç", 15, 5600, 55);
-	Archer Archer("±Ã¼ö", 35, 3500, 12);
+	Warrior Warrior("ì „ì‚¬", 20, 1000, 0);
+	Magician Magician("ë§ˆë²•ì‚¬", 15, 5600, 55);
+	Archer Archer("ê¶ìˆ˜", 35, 3500, 12);
 
-	Manager Manager("°ü¸®ÀÚ");
+	Manager Manager("ê´€ë¦¬ìž");
 
-	Item warriorItem1("Àü»ç¾ÆÀÌÅÛ1", 32);
-	Item warriorItem2("Àü»ç¾ÆÀÌÅÛ2", 28);
+	Item warriorItem1("ì „ì‚¬ì•„ì´í…œ1", 32);
+	Item warriorItem2("ì „ì‚¬ì•„ì´í…œ2", 28);
 
-	Item magicianItem1("¸¶¹ý»ç¾ÆÀÌÅÛ1", 58);
-	Item magicianItem2("¸¶¹ý»ç¾ÆÀÌÅÛ2", 15);
+	Item magicianItem1("ë§ˆë²•ì‚¬ì•„ì´í…œ1", 58);
+	Item magicianItem2("ë§ˆë²•ì‚¬ì•„ì´í…œ2", 15);
 
-	Item archerItem1("±Ã¼ö¾ÆÀÌÅÛ1", 44);
-	Item archerItem2("±Ã¼ö¾ÆÀÌÅÛ2", 23);
+	Item archerItem1("ê¶ìˆ˜ì•„ì´í…œ1", 44);
+	Item archerItem2("ê¶ìˆ˜ì•„ì´í…œ2", 23);
 
 	Warrior.attack();
 	Warrior.defend();
